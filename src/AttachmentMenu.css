@@ -1,0 +1,67 @@
+.attachment-menu {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f5f6f8;
+  color-scheme: dark;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+.attachment-menu::backdrop { background: #08090ddc; animation: attachment-scrim-enter 240ms ease both; }
+.attachment-menu.is-closing::backdrop { animation: attachment-scrim-exit 310ms ease both; }
+.attachment-menu-stack {
+  position: absolute;
+  left: var(--attachment-left, 24px);
+  bottom: calc(100% - var(--attachment-bottom, calc(100% - 24px)));
+  width: var(--attachment-width, 272px);
+  max-height: var(--attachment-height, calc(100% - 36px));
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.attachment-menu-actions { min-height: 0; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: none; }
+.attachment-menu-actions::-webkit-scrollbar { display: none; }
+.attachment-quick-action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 16px;
+  min-height: 56px;
+  width: 100%;
+  padding: 2px 8px 2px 0;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  transform-origin: 22px bottom;
+  animation: attachment-action-enter 380ms cubic-bezier(.18, .84, .26, 1) calc((3 - var(--action-index)) * 30ms) both;
+}
+.attachment-quick-action > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.attachment-quick-icon { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%; color: #fff; transition: transform 130ms ease; }
+.attachment-quick-icon.camera { background: #288c62; }
+.attachment-quick-icon.photos { background: #b9672d; }
+.attachment-quick-icon.audio { background: #6563ba; }
+.attachment-quick-icon.file { background: #ba575d; }
+.attachment-quick-action:active .attachment-quick-icon { transform: scale(.91); }
+.attachment-quick-action:focus-visible { outline-offset: -2px; border-radius: 6px; }
+.attachment-menu-close { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; padding: 0; border-radius: 50%; background: #292c32; color: #f5f6f8; animation: attachment-close-enter 240ms ease both; }
+.attachment-menu-close:active { background: #414650; }
+.attachment-menu.is-closing .attachment-quick-action { animation: attachment-action-exit 220ms cubic-bezier(.5, 0, .85, .4) calc(var(--action-index) * 25ms) both; }
+.attachment-menu.is-closing .attachment-menu-close { animation: attachment-close-exit 310ms ease both; }
+.attachment-menu-title { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@keyframes attachment-action-enter { from { opacity: 0; transform: translateY(var(--action-distance)) scale(.82); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes attachment-action-exit { from { opacity: var(--exit-opacity, 1); transform: var(--exit-transform, none); } to { opacity: 0; transform: translateY(var(--action-distance)) scale(.82); } }
+@keyframes attachment-close-enter { from { opacity: 0; transform: rotate(-45deg); } to { opacity: 1; transform: rotate(0); } }
+@keyframes attachment-close-exit { from { opacity: var(--exit-opacity, 1); transform: var(--exit-transform, none); } to { opacity: 0; transform: rotate(-45deg); } }
+@keyframes attachment-scrim-enter { from { opacity: 0; } to { opacity: 1; } }
+@keyframes attachment-scrim-exit { from { opacity: var(--scrim-exit-opacity, 1); } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .attachment-menu::backdrop, .attachment-menu .attachment-quick-action, .attachment-menu .attachment-menu-close { animation: none; }
+}

@@ -1,0 +1,14 @@
+.chatpop-brand-mark {
+  display: block;
+  flex-shrink: 0;
+  max-width: 100%;
+  object-fit: contain;
+  aspect-ratio: 1;
+  border-radius: 22%;
+  background: #000;
+}
+
+[data-appearance=light] .chatpop-brand-mark {
+  outline: 1px solid #00000020;
+  outline-offset: -1px;
+}

@@ -1,0 +1,11 @@
+:root { --settings-bg: #000; --settings-surface: #19191b; --settings-text: #f5f5f7; --settings-muted: #929299; --settings-line: #303034; --settings-blue: #3478d4; }
+:root[data-appearance=light] { color-scheme: light; background: #fff; color: #161618; --accent: #2864b5; --muted: #696970; --settings-bg: #f2f2f7; --settings-surface: #fff; --settings-text: #161618; --settings-muted: #696970; --settings-line: #dedee3; }
+[data-appearance=light] :is(.top-bar > .icon-button,.model-trigger,.composer,.model-panel,.bottom-sheet) { background: #f2f2f7; border-color: #d6d6dc; color: #161618; }
+[data-appearance=light] :is(.message p,.provider-option[aria-pressed=true]) { background: #e5edf8; color: #161618; }
+[data-appearance=light] :is(.composer textarea,.native-error) { color: #161618; }
+[data-appearance=light] :is(.provider-name,.provider-symbol) { color: #161618; }
+[data-appearance=light] .provider-description { color: #696970; }
+[data-appearance=light] :is(.attachment-button,.send-actions > .icon-button:not(.send-button),.attachment-symbol) { background: #e5e5ea; color: #2864b5; border-color: #d6d6dc; }
+[data-appearance=light] .send-button:disabled { background: #e5e5ea; color: #85858c; border-color: #d6d6dc; }
+[data-appearance=light] .send-button:not(:disabled) { color: white; }
+.settings-screen { --accent: var(--settings-blue); }

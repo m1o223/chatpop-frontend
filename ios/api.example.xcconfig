@@ -1,0 +1,4 @@
+// Copy to api.local.xcconfig and replace API_HOST with your Mac's Wi-Fi IPv4 address.
+// This file is included by Debug only. The $() prevents // from becoming a comment.
+API_HOST = YOUR_MAC_LAN_IP
+API_BASE_URL = http:/$()/$(API_HOST):3000

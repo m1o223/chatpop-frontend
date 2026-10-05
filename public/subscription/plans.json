@@ -1,0 +1,37 @@
+{
+ "providers": [
+  {"id":"openai","name":"OpenAI / GPT","status":"comingSoon"},
+  {"id":"claude","name":"Claude","status":"comingSoon"},
+  {"id":"gemini","name":"Gemini","status":"comingSoon"},
+  {"id":"deepseek","name":"DeepSeek","status":"comingSoon"},
+  {"id":"grok","name":"Grok","status":"comingSoon"},
+  {"id":"mistral","name":"Mistral","status":"comingSoon"},
+  {"id":"qwen","name":"Qwen","status":"comingSoon"},
+  {"id":"cohere","name":"Cohere","status":"comingSoon"}
+ ],
+ "plans": [
+  {"id":"plus","name":"Plus","description":"More room to explore and create.","badge":"Everyday intelligence","models":["openai","claude","gemini","deepseek"],"features":["images","voice","dictation","uploads","documents","vision","search","auto"],"creativeCredits":null,"usageLevel":"Higher chat limits","monthlyPrice":null,"yearlyPrice":null},
+  {"id":"pro","name":"Pro","description":"Everything in Plus, with more creative power.","badge":"Most Powerful","models":["openai","claude","gemini","deepseek","grok","mistral","qwen","cohere"],"features":["images","videos","voice","dictation","uploads","documents","vision","search","compare","auto","priority"],"creativeCredits":null,"usageLevel":"Highest planned chat limits","monthlyPrice":null,"yearlyPrice":null}
+ ],
+ "sections": [
+  {"title":"Create","columns":true,"features":[
+   {"id":"images","title":"Create Images","description":"Generate high-quality AI images","symbol":"photo","status":"comingSoon"},
+   {"id":"videos","title":"Create Videos","description":"Turn ideas into AI video","symbol":"video","status":"comingSoon"}
+  ]},
+  {"title":"Voice","columns":false,"features":[
+   {"id":"voice","title":"Voice Chat","description":"Speak naturally. Hear AI respond.","symbol":"waveform","status":"comingSoon"},
+   {"id":"dictation","title":"Voice to Text","description":"Dictate messages into editable text","symbol":"mic","status":"available"}
+  ]},
+  {"title":"Files & Vision","columns":false,"features":[
+   {"id":"uploads","title":"Images, PDFs & Files","description":"Bring your images and files into chat","symbol":"folder","status":"comingSoon"},
+   {"id":"documents","title":"Analyze Documents","description":"Find meaning in your documents","symbol":"doc.text","status":"comingSoon"},
+   {"id":"vision","title":"Analyze Visual Content","description":"Explore the details in your images","symbol":"eye","status":"comingSoon"},
+   {"id":"videoAnalysis","title":"Analyze Video","description":"Understand moving images","symbol":"film","status":"disabled"}
+  ]},
+  {"title":"Search & Intelligence","columns":false,"features":[
+   {"id":"search","title":"Web Search","description":"Get current information from the web","symbol":"globe","status":"comingSoon"},
+   {"id":"compare","title":"Compare AI","description":"Compare answers from multiple models","symbol":"square.stack","status":"comingSoon"},
+   {"id":"auto","title":"Auto Mode","description":"Let ChatPop choose the best model","symbol":"sparkles","status":"comingSoon"}
+  ]}
+ ]
+}

@@ -1,0 +1,14 @@
+{
+  "cycleDuration": 40,
+  "items": [
+    { "id": "sky-cartographer", "type": "image", "source": "anime-cartographer.jpg", "aspectRatio": 0.9, "altText": "Original anime sky-cartographer above a fantasy city", "columnSpan": 1 },
+    { "id": "sculptural-interior", "type": "image", "source": "architecture.jpg", "aspectRatio": 1.35, "altText": "Sculptural museum interior with a sweeping staircase", "columnSpan": 1 },
+    { "id": "future-city", "type": "image", "source": "future-city.jpg", "aspectRatio": 1.05, "altText": "Cinematic futuristic city with elevated gardens", "columnSpan": 1 },
+    { "id": "quwati-film", "type": "video", "source": "quwati-preview.mp4", "poster": "quwati-poster.jpg", "aspectRatio": 0.55, "altText": "Quwati walking through a cinematic ruined city", "columnSpan": 1 },
+    { "id": "original-character", "type": "image", "source": "cartoon-astronomer.jpg", "aspectRatio": 0.82, "altText": "Original animated astronomer character in a colorful observatory", "columnSpan": 1 },
+    { "id": "coastal-world", "type": "image", "source": "coast.jpg", "aspectRatio": 2.2, "altText": "Futuristic coastal architecture above a blue sea", "columnSpan": 2 },
+    { "id": "cinematic-character", "type": "image", "source": "portrait.jpg", "aspectRatio": 0.9, "altText": "Original cinematic android character portrait", "columnSpan": 1 },
+    { "id": "design-concept", "type": "image", "source": "design-atlas.jpg", "aspectRatio": 1, "altText": "Exploded architectural concept illustration and visual design", "columnSpan": 1 },
+    { "id": "glacial-world", "type": "image", "source": "landscape.jpg", "aspectRatio": 2.3, "altText": "Cinematic glacial river and mountain environment", "columnSpan": 2 }
+  ]
+}

@@ -1,0 +1,4 @@
+CAPACITOR_DEBUG = true
+API_HOST = unconfigured.invalid
+API_BASE_URL = https:/$()/$(API_HOST)
+#include? "api.local.xcconfig"

@@ -1,0 +1,46 @@
+.voice-modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) max(30px, env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
+  border: 0;
+  background: #000;
+  color: #fff;
+  color-scheme: dark;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+.voice-modal[open] { display: grid; grid-template-rows: 52px minmax(0, 1fr) 88px; animation: voice-enter 300ms cubic-bezier(.2, .7, .2, 1) both; }
+.voice-modal::backdrop { background: #000; animation: voice-backdrop-enter 300ms ease both; }
+.voice-modal.is-closing { animation: voice-exit 220ms ease-in both; pointer-events: none; }
+.voice-modal.is-closing::backdrop { animation: voice-backdrop-exit 220ms ease-in both; }
+.voice-modal-header { display: flex; align-items: center; justify-content: space-between; }
+.voice-control { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0; border: 1px solid #303238; border-radius: 50%; background: #1b1d21; color: #f5f7fa; }
+.voice-control:active { background: #30353d; }
+.voice-control:focus-visible { outline: 2px solid #8cc8ff; outline-offset: 5px; }
+.voice-close { width: 52px; height: 52px; }
+.voice-orb-stage { display: grid; place-items: center; min-height: 0; min-width: 0; }
+.voice-orb { width: min(264px, 76vw, 48dvh); aspect-ratio: 1; border-radius: 50%; background: #f6faff; display: grid; place-items: center; overflow: hidden; animation: voice-breathe 4s ease-in-out infinite; }
+.voice-audio-lines { width: 82%; height: 60%; display: flex; justify-content: center; align-items: center; gap: 3px; }
+.voice-audio-lines span { display: block; flex: 1 1 0; max-width: 5px; height: min(var(--bar-height), 100%); border-radius: 6px; background: #4d9af0; transform: scaleY(.65); animation: voice-audio 1.45s ease-in-out var(--bar-delay) infinite alternate; }
+.voice-audio-lines span:nth-child(3n) { background: #a0d4ff; animation-duration: 1.7s; }
+.voice-audio-lines span:nth-child(3n + 1) { background: #3478d4; animation-duration: 1.2s; }
+.voice-modal-controls { display: flex; align-items: center; justify-content: center; }
+.voice-microphone { width: 68px; height: 68px; color: #94ccff; }
+.voice-microphone[aria-pressed=true] { background: #f5f7fa; color: #20252c; border-color: #f5f7fa; }
+.voice-modal.is-muted .voice-orb { animation-play-state: paused; }
+.voice-modal.is-muted .voice-audio-lines span { animation: none; transform: scaleY(.09); opacity: .6; }
+.voice-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@keyframes voice-enter { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes voice-exit { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(18px); } }
+@keyframes voice-backdrop-enter { from { opacity: 0; } to { opacity: 1; } }
+@keyframes voice-backdrop-exit { from { opacity: 1; } to { opacity: 0; } }
+@keyframes voice-breathe { 0%, 100% { transform: scale(.97); } 50% { transform: scale(1); } }
+@keyframes voice-audio { from { transform: scaleY(.35); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .voice-modal[open], .voice-modal.is-closing, .voice-modal::backdrop, .voice-orb, .voice-audio-lines span { animation: none; }
+}

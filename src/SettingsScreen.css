@@ -1,0 +1,48 @@
+.settings-screen { position: fixed; inset: var(--viewport-top) 0 auto; width: 100%; max-width: none; height: var(--viewport-height); max-height: none; margin: 0; padding: env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px); border: 0; background: var(--settings-bg); color: var(--settings-text); overflow: hidden; }
+.settings-screen[open] { display: flex; flex-direction: column; }
+.settings-screen::backdrop { background: #0008; }
+.settings-header { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-height: 64px; padding: 8px 16px; }
+.settings-header h2 { margin: 0; flex: 1; font-size: 20px; font-weight: 600; }
+.settings-header .icon-button { color: var(--settings-text); }
+.settings-content { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 12px 20px 24px; }
+.settings-upgrade { display: flex; align-items: center; gap: 14px; width: 100%; padding: 18px 14px; background: var(--settings-surface); border-radius: 8px; text-align: left; }
+.settings-upgrade > svg { color: var(--settings-blue); }
+.settings-upgrade span { flex: 1; min-width: 0; }
+.settings-upgrade strong { display: block; font-size: 17px; }
+.settings-upgrade small { display: block; color: var(--settings-muted); margin-top: 5px; font-size: 13px; }
+.settings-section { margin-top: 26px; }
+.settings-section h3 { margin: 0 12px 8px; color: var(--settings-muted); font-size: 13px; font-weight: 500; }
+.settings-group { background: var(--settings-surface); border-radius: 8px; overflow: hidden; }
+.settings-row { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 52px; padding: 12px; text-align: left; }
+.settings-row + .settings-row { border-top: 1px solid var(--settings-line); }
+.settings-row-icon,.settings-check { flex: 0 0 22px; display: flex; color: var(--settings-blue); }
+.settings-row-title { flex: 1; min-width: 0; font-size: 15px; overflow-wrap: anywhere; }
+.settings-row > svg { color: var(--settings-muted); }
+.settings-detail { max-width: 35%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--settings-muted); font-size: 14px; }
+.settings-row.destructive,.settings-row.destructive .settings-row-icon { color: #ee5752; }
+.settings-name { display: flex; flex-wrap: wrap; gap: 12px; padding: 14px; }
+.settings-name label { flex: 1 0 100%; font-size: 15px; }
+.settings-name input { flex: 1; width: 100%; min-width: 0; min-height: 44px; padding: 8px; border: 1px solid var(--settings-line); border-radius: 6px; background: var(--settings-bg); color: var(--settings-text); font-size: 16px; }
+.settings-name button { color: var(--settings-blue); min-height: 44px; padding: 8px; }
+.settings-note,.settings-secondary { color: var(--settings-muted); font-size: 13px; line-height: 1.5; }
+.settings-version { padding: 24px 0; text-align: center; color: var(--settings-muted); font-size: 13px; line-height: 1.8; }
+.paywall-close { opacity: 0; pointer-events: none; transition: opacity 200ms ease; }
+.paywall-close.is-visible { opacity: 1; pointer-events: auto; }
+.paywall-mark { margin-top: 12px; }
+.about-brand { margin: 12px 0 20px; }
+.paywall-content h1 { font-size: 28px; margin: 18px 0 10px; }
+.paywall-content h3 { font-size: 16px; margin: 24px 0 16px; }
+.paywall-content > .settings-secondary { font-size: 16px; }
+.settings-segment { display: flex; background: var(--settings-surface); padding: 4px; border-radius: 8px; margin: 20px 0; }
+.settings-segment button { flex: 1; min-width: 0; min-height: 40px; border-radius: 6px; font-size: 15px; }
+.settings-segment button[aria-pressed=true] { background: var(--settings-blue); color: #fff; }
+.paywall-features { margin: 0; padding: 0; list-style: none; }
+.paywall-features li { display: flex; align-items: center; gap: 12px; min-height: 40px; font-size: 16px; }
+.paywall-features svg { color: var(--settings-blue); }
+.paywall-price { font-size: 17px; font-weight: 600; }
+.paywall-continue { min-height: 50px; width: 100%; border-radius: 8px; background: var(--settings-blue); color: white; font-size: 16px; font-weight: 600; margin: 12px 0 8px; }
+.settings-link { color: var(--settings-blue); min-height: 44px; padding: 10px; font-size: 14px; }
+.paywall-content > .settings-link { width: 100%; }
+.paywall-legal { display: flex; flex-wrap: wrap; justify-content: center; }
+.paywall-exit { flex-shrink: 0; padding: 4px 20px; text-align: center; }
+@media (prefers-reduced-motion: reduce) { .paywall-close { transition: none; } }
